@@ -26,7 +26,7 @@ D/MainActivity: onResume state:STARTED
 D/MainActivity: onPostResume state:RESUMED
 ```
 
-[ViewModel の概要  \|  Android デベロッパー  \|  Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ja)
+- [ViewModel の概要  \|  Android デベロッパー  \|  Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ja)
 
 
 ![Android ViewModel & Lifecycle](assets/android_viewmodel_lifecyclepng.png)
