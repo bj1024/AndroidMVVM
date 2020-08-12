@@ -9,16 +9,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
-
     <TextView
-        android:id="@+id/main_message"
+        android:id="@+id/currentdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
+        android:layout_marginBottom="100dp"
+        android:text="CurrentDate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentdate" />
 
     <Button
         android:id="@+id/main_countup"
@@ -29,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_message" />
+        app:layout_constraintTop_toBottomOf="@+id/count" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

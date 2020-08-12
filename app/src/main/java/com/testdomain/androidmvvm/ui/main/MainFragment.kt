@@ -1,6 +1,5 @@
 package com.testdomain.androidmvvm.ui.main
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -11,6 +10,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import com.testdomain.androidmvvm.R
+import com.testdomain.androidmvvm.debounce
+import java.text.SimpleDateFormat
 
 class MainFragment : Fragment() {
 
@@ -47,19 +48,26 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var textView = view.findViewById<TextView>(R.id.main_message)
+        var countTextView = view.findViewById<TextView>(R.id.count)
         var buttonCountUp = view.findViewById<Button>(R.id.main_countup)
+        var currentdateTextView = view.findViewById<TextView>(R.id.currentdate)
 
 
         viewModel.count.observe(this, Observer { count ->
-            textView.text = count.toString()
+            countTextView.text = count.toString()
         })
+
 
         buttonCountUp.setOnClickListener {
             viewModel.countUp()
         }
 
-
+//        viewModel.date.debounce(1000L)
+        viewModel.date
+            .observe(this, Observer { date ->
+            val format = SimpleDateFormat("yyyy/MM/dd hh:mm:ss.SSS")
+            currentdateTextView.text = format.format(date)
+        })
 
     }
 
