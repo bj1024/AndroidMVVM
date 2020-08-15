@@ -44,9 +44,6 @@ class MainViewModel : ViewModel() {
                 _date.postValue(Date())
                 _lastSearchTime = time
             }
-
-
-
         }
     }
 
